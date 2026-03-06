@@ -1,0 +1,49 @@
+2026-03-06 13:46:49.756 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Starting PlagChenckProApplication using Java 17 with PID 4212 (D:\install_all\IntelliJ IDEA 2025.3\IdeaProjects\plagChenckPro\target\classes started by 谢霄峰 in D:\install_all\IntelliJ IDEA 2025.3\IdeaProjects\plagChenckPro)
+2026-03-06 13:46:49.762 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-06 13:46:50.693 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2026-03-06 13:46:50.700 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2026-03-06 13:46:50.701 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-06 13:46:50.701 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-03-06 13:46:50.798 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-06 13:46:50.798 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 997 ms
+2026-03-06 13:46:51.112 [main] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+2026-03-06 13:46:52.525 [main] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for linear algebra: 12
+2026-03-06 13:46:52.527 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *********************************** CPU Feature Check Warning ***********************************
+2026-03-06 13:46:52.527 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+2026-03-06 13:46:52.527 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+2026-03-06 13:46:52.527 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+2026-03-06 13:46:52.527 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *************************************************************************************************
+2026-03-06 13:46:52.721 [main] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for OpenMP BLAS: 12
+2026-03-06 13:46:52.770 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+2026-03-06 13:46:52.770 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Cores: [16]; Memory: [3.9GB];
+2026-03-06 13:46:52.770 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+2026-03-06 13:47:00.220 [main] INFO  c.afeng.plagchenckpro.config.WebMvcConfiguration - 开始注册自定义拦截器...
+2026-03-06 13:47:00.447 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2026-03-06 13:47:00.463 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2026-03-06 13:47:00.469 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Started PlagChenckProApplication in 11.031 seconds (process running for 12.109)
+2026-03-06 13:47:22.576 [http-nio-8090-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-06 13:47:22.576 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-06 13:47:22.576 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-03-06 13:47:22.598 [http-nio-8090-exec-1] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /
+2026-03-06 13:47:22.627 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:null
+2026-03-06 13:47:30.879 [http-nio-8090-exec-2] WARN  org.springframework.web.servlet.PageNotFound - No mapping for GET /
+2026-03-06 13:47:30.880 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:null
+2026-03-06 13:56:00.125 [http-nio-8090-exec-6] INFO  com.afeng.plagchenckpro.controller.UserController - 注册：User(id=null, name=afeng, userName=afeng, password=123456, isManage=null, createTime=null)
+2026-03-06 13:56:00.284 [http-nio-8090-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-06 13:56:00.627 [http-nio-8090-exec-6] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1dba0bbf
+2026-03-06 13:56:00.643 [http-nio-8090-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-06 13:56:02.596 [http-nio-8090-exec-8] INFO  com.afeng.plagchenckpro.controller.UserController - 登录：afeng,123456
+2026-03-06 13:56:17.586 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_y2LQQrEIAwA_5JzBW3VmP4mUgsuLAix4LL0743Q2wzD_OHTK-zgiPAsnoxNkY0nZw2lkI0PcSsZ2R4YYIHKHXaHuCLGENcF5Mp6y096-c4uojrGqczXocytKZfR3i9ZN7-qbbsfXUQEcH4AAAA.SteeSVG4T_Vilrs8Flr7xXSqDo0TUZrUlCvXikLWwZJTWG9kvuHvMHklO59CDFm4iZa_FW8ohDfzz_Ktq02oUA
+2026-03-06 13:56:17.598 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：3
+2026-03-06 13:56:17.598 [http-nio-8090-exec-10] INFO  c.a.plagchenckpro.controller.FeedbackController - 获取反馈
+2026-03-06 13:56:23.858 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_y2LQQrEIAwA_5JzBW3VmP4mUgsuLAix4LL0743Q2wzD_OHTK-zgiPAsnoxNkY0nZw2lkI0PcSsZ2R4YYIHKHXaHuCLGENcF5Mp6y096-c4uojrGqczXocytKZfR3i9ZN7-qbbsfXUQEcH4AAAA.SteeSVG4T_Vilrs8Flr7xXSqDo0TUZrUlCvXikLWwZJTWG9kvuHvMHklO59CDFm4iZa_FW8ohDfzz_Ktq02oUA
+2026-03-06 13:56:23.860 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：3
+2026-03-06 13:56:23.866 [http-nio-8090-exec-2] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2026-03-06 13:57:16.148 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_y2LQQrEIAwA_5JzBW3VmP4mUgsuLAix4LL0743Q2wzD_OHTK-zgiPAsnoxNkY0nZw2lkI0PcSsZ2R4YYIHKHXaHuCLGENcF5Mp6y096-c4uojrGqczXocytKZfR3i9ZN7-qbbsfXUQEcH4AAAA.SteeSVG4T_Vilrs8Flr7xXSqDo0TUZrUlCvXikLWwZJTWG9kvuHvMHklO59CDFm4iZa_FW8ohDfzz_Ktq02oUA
+2026-03-06 13:57:16.152 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：3
+2026-03-06 13:57:16.152 [http-nio-8090-exec-3] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2026-03-06 13:57:36.536 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_y2LQQrEIAwA_5JzBW3VmP4mUgsuLAix4LL0743Q2wzD_OHTK-zgiPAsnoxNkY0nZw2lkI0PcSsZ2R4YYIHKHXaHuCLGENcF5Mp6y096-c4uojrGqczXocytKZfR3i9ZN7-qbbsfXUQEcH4AAAA.SteeSVG4T_Vilrs8Flr7xXSqDo0TUZrUlCvXikLWwZJTWG9kvuHvMHklO59CDFm4iZa_FW8ohDfzz_Ktq02oUA
+2026-03-06 13:57:36.540 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：3
+2026-03-06 13:57:36.540 [http-nio-8090-exec-4] INFO  c.a.plagchenckpro.controller.FeedbackController - 获取反馈
+2026-03-06 13:58:16.706 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-06 13:58:16.716 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

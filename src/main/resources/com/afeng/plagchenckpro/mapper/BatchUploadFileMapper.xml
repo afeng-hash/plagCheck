@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.afeng.plagchenckpro.mapper.BatchUploadFileMapper">
+
+    <!-- 批量插入 BatchUploadFile 记录 -->
+    <insert id="batchInsert" useGeneratedKeys="true" keyProperty="list.id" keyColumn="id">
+        INSERT INTO batch_upload_file(task_id, file_name, file_path, file_size, status, message)
+        VALUES
+        <foreach collection="list" item="file" separator=",">
+            (#{file.taskId}, #{file.fileName}, #{file.filePath}, #{file.fileSize}, #{file.status}, #{file.message})
+        </foreach>
+    </insert>
+
+</mapper>

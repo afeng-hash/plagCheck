@@ -1,0 +1,683 @@
+2025-10-20 22:38:09.337 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Starting PlagChenckProApplication using Java 17 with PID 76032 (D:\install_all\IDEA\IdeaProjects\plagChenckPro\target\classes started by 谢霄峰 in D:\install_all\IDEA\IdeaProjects\plagChenckPro)
+2025-10-20 22:38:09.338 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-20 22:38:10.337 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-20 22:38:10.345 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:38:10.346 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-20 22:38:10.346 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-20 22:38:10.440 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-20 22:38:10.440 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1056 ms
+2025-10-20 22:38:10.781 [main] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+2025-10-20 22:38:12.237 [main] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for linear algebra: 12
+2025-10-20 22:38:12.238 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *********************************** CPU Feature Check Warning ***********************************
+2025-10-20 22:38:12.239 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+2025-10-20 22:38:12.239 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+2025-10-20 22:38:12.239 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+2025-10-20 22:38:12.239 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *************************************************************************************************
+2025-10-20 22:38:12.463 [main] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for OpenMP BLAS: 12
+2025-10-20 22:38:12.518 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+2025-10-20 22:38:12.518 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Cores: [16]; Memory: [3.9GB];
+2025-10-20 22:38:12.518 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+2025-10-20 22:38:15.474 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioConfig': Injection of autowired dependencies failed
+2025-10-20 22:38:15.476 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-10-20 22:38:15.492 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-20 22:38:15.505 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'minioConfig': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at com.afeng.plagchenckpro.PlagChenckProApplication.main(PlagChenckProApplication.java:16)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'minio.secretKey' in value "${minio.secretKey}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1358)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:751)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:492)
+	... 17 common frames omitted
+2025-10-20 22:42:29.380 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Starting PlagChenckProApplication using Java 17 with PID 57096 (D:\install_all\IDEA\IdeaProjects\plagChenckPro\target\classes started by 谢霄峰 in D:\install_all\IDEA\IdeaProjects\plagChenckPro)
+2025-10-20 22:42:29.382 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-20 22:42:30.327 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-20 22:42:30.333 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:42:30.334 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-20 22:42:30.334 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-20 22:42:30.424 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-20 22:42:30.426 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1001 ms
+2025-10-20 22:42:30.788 [main] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+2025-10-20 22:42:32.012 [main] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for linear algebra: 12
+2025-10-20 22:42:32.014 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *********************************** CPU Feature Check Warning ***********************************
+2025-10-20 22:42:32.014 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+2025-10-20 22:42:32.014 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+2025-10-20 22:42:32.014 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+2025-10-20 22:42:32.014 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *************************************************************************************************
+2025-10-20 22:42:32.241 [main] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for OpenMP BLAS: 12
+2025-10-20 22:42:32.287 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+2025-10-20 22:42:32.288 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Cores: [16]; Memory: [3.9GB];
+2025-10-20 22:42:32.288 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+2025-10-20 22:42:36.688 [main] INFO  c.afeng.plagchenckpro.config.WebMvcConfiguration - 开始注册自定义拦截器...
+2025-10-20 22:42:36.936 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:42:36.939 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-10-20 22:42:36.942 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:42:36.942 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2025-10-20 22:42:36.945 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:42:36.946 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-10-20 22:42:36.950 [main] INFO  o.s.b.a.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-20 22:42:36.961 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-10-20 22:45:31.419 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Starting PlagChenckProApplication using Java 17 with PID 105176 (D:\install_all\IDEA\IdeaProjects\plagChenckPro\target\classes started by 谢霄峰 in D:\install_all\IDEA\IdeaProjects\plagChenckPro)
+2025-10-20 22:45:31.421 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-20 22:45:32.245 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-10-20 22:45:32.252 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-10-20 22:45:32.253 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-20 22:45:32.254 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-20 22:45:32.339 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-20 22:45:32.339 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 879 ms
+2025-10-20 22:45:32.700 [main] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+2025-10-20 22:45:33.966 [main] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for linear algebra: 12
+2025-10-20 22:45:33.967 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *********************************** CPU Feature Check Warning ***********************************
+2025-10-20 22:45:33.967 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+2025-10-20 22:45:33.967 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+2025-10-20 22:45:33.967 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+2025-10-20 22:45:33.967 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *************************************************************************************************
+2025-10-20 22:45:34.196 [main] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for OpenMP BLAS: 12
+2025-10-20 22:45:34.237 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+2025-10-20 22:45:34.237 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Cores: [16]; Memory: [3.9GB];
+2025-10-20 22:45:34.237 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+2025-10-20 22:45:38.100 [main] INFO  c.afeng.plagchenckpro.config.WebMvcConfiguration - 开始注册自定义拦截器...
+2025-10-20 22:45:38.330 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-10-20 22:45:38.350 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-10-20 22:45:38.357 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Started PlagChenckProApplication in 7.18 seconds (process running for 8.062)
+2025-10-20 22:47:09.611 [http-nio-8090-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-20 22:47:09.611 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-20 22:47:09.612 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-20 22:47:09.836 [http-nio-8090-exec-2] INFO  com.afeng.plagchenckpro.controller.UserController - 注册：User(id=null, name=阿峰, userName=12345, password=123456, isManage=null, createTime=null)
+2025-10-20 22:47:09.908 [http-nio-8090-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-20 22:47:10.247 [http-nio-8090-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@304377d4
+2025-10-20 22:47:10.251 [http-nio-8090-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-20 22:47:11.790 [http-nio-8090-exec-4] INFO  com.afeng.plagchenckpro.controller.UserController - 登录：12345,123456
+2025-10-20 22:47:19.147 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:19.161 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:19.165 [http-nio-8090-exec-6] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 22:47:47.641 [http-nio-8090-exec-8] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:47.643 [http-nio-8090-exec-8] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:47.691 [http-nio-8090-exec-8] INFO  c.a.plagchenckpro.service.impl.BatchServiceImpl - 批量处理完成，耗时: 46 ms
+2025-10-20 22:47:48.258 [paper-check-1] INFO  c.a.plagchenckpro.service.impl.PaperServiceImpl - 开始上传论文，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 标题: 基于机器学习的南京市居民消费趋势的分析和预测, 作者: 陈玺聿
+2025-10-20 22:47:48.259 [paper-check-1] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 大小: 1748095 bytes
+2025-10-20 22:47:48.722 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:48.726 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:48.727 [http-nio-8090-exec-10] INFO  c.afeng.plagchenckpro.controller.BatchController - 获取批量上传任务状态: 61969867-97ec-4302-a445-1b38431bfbe8
+2025-10-20 22:47:48.797 [paper-check-1] WARN  org.apache.fontbox.ttf.TTFParser - Skip table '    ' which goes past the file size; offset: 1146308935, size: 7600, font size: 1792664
+2025-10-20 22:47:48.797 [paper-check-1] WARN  org.apache.pdfbox.pdmodel.font.PDCIDFontType2 - Could not read embedded OTF for font DCWGQU+CambriaMath
+java.io.IOException: 'head' table is mandatory
+	at org.apache.fontbox.ttf.TTFParser.parseTables(TTFParser.java:198)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:165)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:79)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:27)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:110)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:73)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:112)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:65)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createDescendantFont(PDFontFactory.java:139)
+	at org.apache.pdfbox.pdmodel.font.PDType0Font.<init>(PDType0Font.java:203)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createFont(PDFontFactory.java:97)
+	at org.apache.pdfbox.pdmodel.PDResources.getFont(PDResources.java:171)
+	at org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.process(SetFontAndSize.java:66)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:980)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:555)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:530)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.LegacyPDFStreamEngine.processPage(LegacyPDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.PDFTextStripper.processPage(PDFTextStripper.java:363)
+	at org.apache.tika.parser.pdf.PDF2XHTML.processPage(PDF2XHTML.java:137)
+	at org.apache.tika.parser.pdf.AbstractPDF2XHTML.processPages(AbstractPDF2XHTML.java:1369)
+	at org.apache.pdfbox.text.PDFTextStripper.writeText(PDFTextStripper.java:238)
+	at org.apache.tika.parser.pdf.PDF2XHTML.process(PDF2XHTML.java:108)
+	at org.apache.tika.parser.pdf.PDFParser.parse(PDFParser.java:219)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:203)
+	at org.apache.tika.Tika.parseToString(Tika.java:525)
+	at org.apache.tika.Tika.parseToString(Tika.java:495)
+	at org.apache.tika.Tika.parseToString(Tika.java:557)
+	at com.afeng.plagchenckpro.service.impl.DocumentParseServiceImpl.parseDocument(DocumentParseServiceImpl.java:64)
+	at com.afeng.plagchenckpro.service.impl.PaperServiceImpl.uploadPaper(PaperServiceImpl.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.afeng.plagchenckpro.service.impl.PaperServiceImpl$$SpringCGLIB$$0.uploadPaper(<generated>)
+	at com.afeng.plagchenckpro.service.impl.BatchServiceImpl.processSingleFileAsync(BatchServiceImpl.java:149)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-20 22:47:49.139 [paper-check-1] WARN  org.apache.fontbox.ttf.CmapSubtable - Format 14 cmap table is not supported and will be ignored
+2025-10-20 22:47:49.247 [paper-check-1] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 29861 字符
+2025-10-20 22:47:49.251 [paper-check-1] INFO  com.afeng.plagchenckpro.common.utils.TextProcess - 停用词初始化完成，共加载 84 个停用词
+2025-10-20 22:47:49.706 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:49.709 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:49.710 [http-nio-8090-exec-1] INFO  c.afeng.plagchenckpro.controller.BatchController - 获取批量上传任务状态: 61969867-97ec-4302-a445-1b38431bfbe8
+2025-10-20 22:47:50.120 [paper-check-1] INFO  c.a.plagchenckpro.service.impl.PaperServiceImpl - 论文保存成功，ID: 1
+2025-10-20 22:47:50.707 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:50.708 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:50.709 [http-nio-8090-exec-2] INFO  c.afeng.plagchenckpro.controller.BatchController - 获取批量上传任务状态: 61969867-97ec-4302-a445-1b38431bfbe8
+2025-10-20 22:47:51.611 [paper-check-1] INFO  c.a.plagchenckpro.service.impl.PaperServiceImpl - 论文内容处理完成，论文ID: 1, 句子数: 353
+2025-10-20 22:47:51.611 [paper-check-1] INFO  c.a.plagchenckpro.service.impl.PaperServiceImpl - 论文内容处理完成，生成 353 个句子
+2025-10-20 22:47:51.652 [paper-check-1] INFO  c.a.plagchenckpro.service.impl.PaperServiceImpl - 论文上传完成，ID: 1, 标题: 基于机器学习的南京市居民消费趋势的分析和预测
+2025-10-20 22:47:51.702 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:51.704 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:51.704 [http-nio-8090-exec-3] INFO  c.afeng.plagchenckpro.controller.BatchController - 获取批量上传任务状态: 61969867-97ec-4302-a445-1b38431bfbe8
+2025-10-20 22:47:51.716 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:47:51.719 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:47:51.720 [http-nio-8090-exec-5] INFO  c.afeng.plagchenckpro.controller.BatchController - 获取批量处理结果: 61969867-97ec-4302-a445-1b38431bfbe8
+2025-10-20 22:49:35.620 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:49:35.624 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:49:35.625 [http-nio-8090-exec-7] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 22:49:54.139 [http-nio-8090-exec-8] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:49:54.142 [http-nio-8090-exec-8] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:49:54.144 [http-nio-8090-exec-8] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 22:56:15.828 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 22:56:15.831 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 22:56:15.831 [http-nio-8090-exec-10] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:03:08.609 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:03:08.612 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:03:08.613 [http-nio-8090-exec-2] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:05:20.159 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:05:20.162 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:05:20.162 [http-nio-8090-exec-4] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:10:26.443 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:10:26.448 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:10:26.449 [http-nio-8090-exec-6] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:11:12.179 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:11:12.186 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:11:38.339 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:11:38.344 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:12:41.772 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-20 23:12:41.797 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-20 23:13:13.547 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Starting PlagChenckProApplication using Java 17 with PID 69316 (D:\install_all\IDEA\IdeaProjects\plagChenckPro\target\classes started by 谢霄峰 in D:\install_all\IDEA\IdeaProjects\plagChenckPro)
+2025-10-20 23:13:13.548 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-20 23:13:14.552 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2025-10-20 23:13:14.559 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2025-10-20 23:13:14.561 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-20 23:13:14.561 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-10-20 23:13:14.658 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-20 23:13:14.658 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1071 ms
+2025-10-20 23:13:15.025 [main] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+2025-10-20 23:13:16.357 [main] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for linear algebra: 12
+2025-10-20 23:13:16.360 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *********************************** CPU Feature Check Warning ***********************************
+2025-10-20 23:13:16.360 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+2025-10-20 23:13:16.360 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+2025-10-20 23:13:16.360 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+2025-10-20 23:13:16.360 [main] WARN  org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory - *************************************************************************************************
+2025-10-20 23:13:16.647 [main] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for OpenMP BLAS: 12
+2025-10-20 23:13:16.698 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+2025-10-20 23:13:16.698 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Cores: [16]; Memory: [3.9GB];
+2025-10-20 23:13:16.698 [main] INFO  o.n.l.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+2025-10-20 23:13:21.209 [main] INFO  c.afeng.plagchenckpro.config.WebMvcConfiguration - 开始注册自定义拦截器...
+2025-10-20 23:13:21.460 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2025-10-20 23:13:21.483 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2025-10-20 23:13:21.494 [main] INFO  com.afeng.plagchenckpro.PlagChenckProApplication - Started PlagChenckProApplication in 8.287 seconds (process running for 9.656)
+2025-10-20 23:13:43.555 [http-nio-8090-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-20 23:13:43.555 [http-nio-8090-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-20 23:13:43.558 [http-nio-8090-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-20 23:13:43.617 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:13:43.723 [http-nio-8090-exec-3] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:13:43.752 [http-nio-8090-exec-3] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:14:24.923 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:14:24.924 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:14:32.285 [http-nio-8090-exec-6] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:17:53.647 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:17:53.650 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:17:53.658 [http-nio-8090-exec-1] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:17:53.673 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-20 23:17:54.052 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b60a55c
+2025-10-20 23:17:54.057 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-20 23:18:04.700 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:18:04.703 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:18:04.703 [http-nio-8090-exec-7] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:20:05.166 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:20:05.167 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:20:05.168 [http-nio-8090-exec-9] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:20:11.528 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:20:11.530 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:20:11.530 [http-nio-8090-exec-10] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:22:03.012 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:22:03.016 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:22:03.018 [http-nio-8090-exec-6] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:22:11.519 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:22:11.521 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:22:11.522 [http-nio-8090-exec-4] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:22:18.717 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:22:18.719 [http-nio-8090-exec-1] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:22:18.720 [http-nio-8090-exec-1] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:22:43.525 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:22:43.527 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:22:43.527 [http-nio-8090-exec-5] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:23:11.550 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:23:11.553 [http-nio-8090-exec-2] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:23:11.556 [http-nio-8090-exec-2] INFO  c.a.plagchenckpro.controller.PlagiarismController - 收到查重检测请求，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:23:11.556 [http-nio-8090-exec-2] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 开始高效查重检测，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:23:11.556 [http-nio-8090-exec-2] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 大小: 1748095 bytes
+2025-10-20 23:23:12.024 [http-nio-8090-exec-2] WARN  org.apache.fontbox.ttf.TTFParser - Skip table '    ' which goes past the file size; offset: 1146308935, size: 7600, font size: 1792664
+2025-10-20 23:23:12.026 [http-nio-8090-exec-2] WARN  org.apache.pdfbox.pdmodel.font.PDCIDFontType2 - Could not read embedded OTF for font DCWGQU+CambriaMath
+java.io.IOException: 'head' table is mandatory
+	at org.apache.fontbox.ttf.TTFParser.parseTables(TTFParser.java:198)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:165)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:79)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:27)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:110)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:73)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:112)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:65)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createDescendantFont(PDFontFactory.java:139)
+	at org.apache.pdfbox.pdmodel.font.PDType0Font.<init>(PDType0Font.java:203)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createFont(PDFontFactory.java:97)
+	at org.apache.pdfbox.pdmodel.PDResources.getFont(PDResources.java:171)
+	at org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.process(SetFontAndSize.java:66)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:980)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:555)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:530)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.LegacyPDFStreamEngine.processPage(LegacyPDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.PDFTextStripper.processPage(PDFTextStripper.java:363)
+	at org.apache.tika.parser.pdf.PDF2XHTML.processPage(PDF2XHTML.java:137)
+	at org.apache.tika.parser.pdf.AbstractPDF2XHTML.processPages(AbstractPDF2XHTML.java:1369)
+	at org.apache.pdfbox.text.PDFTextStripper.writeText(PDFTextStripper.java:238)
+	at org.apache.tika.parser.pdf.PDF2XHTML.process(PDF2XHTML.java:108)
+	at org.apache.tika.parser.pdf.PDFParser.parse(PDFParser.java:219)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:203)
+	at org.apache.tika.Tika.parseToString(Tika.java:525)
+	at org.apache.tika.Tika.parseToString(Tika.java:495)
+	at org.apache.tika.Tika.parseToString(Tika.java:557)
+	at com.afeng.plagchenckpro.service.impl.DocumentParseServiceImpl.parseDocument(DocumentParseServiceImpl.java:64)
+	at com.afeng.plagchenckpro.service.impl.PlagiarismCheckServiceImpl.checkPlagiarism(PlagiarismCheckServiceImpl.java:80)
+	at com.afeng.plagchenckpro.controller.PlagiarismController.checkPlagiarism(PlagiarismController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-20 23:23:12.285 [http-nio-8090-exec-2] WARN  org.apache.fontbox.ttf.CmapSubtable - Format 14 cmap table is not supported and will be ignored
+2025-10-20 23:23:12.449 [http-nio-8090-exec-2] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 29861 字符
+2025-10-20 23:23:12.454 [http-nio-8090-exec-2] INFO  com.afeng.plagchenckpro.common.utils.TextProcess - 停用词初始化完成，共加载 84 个停用词
+2025-10-20 23:23:16.193 [http-nio-8090-exec-2] ERROR c.a.p.service.impl.PlagiarismCheckServiceImpl - 句子数量：353
+2025-10-20 23:23:16.199 [http-nio-8090-exec-2] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 前三个高重复论文ID: [1]
+2025-10-20 23:23:16.204 [http-nio-8090-exec-2] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 高效查重检测完成，查重率: 97.0, 相似句子数: 341,处理错误的句子:0
+2025-10-20 23:23:16.204 [http-nio-8090-exec-2] INFO  c.a.plagchenckpro.controller.PlagiarismController - 查重检测完成，查重率: 97.0%, 相似句子数: 341
+2025-10-20 23:23:55.518 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:23:55.520 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:23:55.521 [http-nio-8090-exec-9] INFO  c.a.plagchenckpro.controller.PlagiarismController - 收到查重检测请求，文件名: 20480050213_张佳缘_基于深度学习的猫类面部识别分类研究.pdf, 阈值: 0.7
+2025-10-20 23:23:55.521 [http-nio-8090-exec-9] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 开始高效查重检测，文件名: 20480050213_张佳缘_基于深度学习的猫类面部识别分类研究.pdf, 阈值: 0.7
+2025-10-20 23:23:55.521 [http-nio-8090-exec-9] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050213_张佳缘_基于深度学习的猫类面部识别分类研究.pdf, 大小: 1669593 bytes
+2025-10-20 23:23:55.645 [http-nio-8090-exec-9] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 25159 字符
+2025-10-20 23:23:56.469 [http-nio-8090-exec-9] ERROR c.a.p.service.impl.PlagiarismCheckServiceImpl - 句子数量：331
+2025-10-20 23:23:56.469 [http-nio-8090-exec-9] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 前三个高重复论文ID: []
+2025-10-20 23:23:56.469 [http-nio-8090-exec-9] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 高效查重检测完成，查重率: 0.0, 相似句子数: 0,处理错误的句子:0
+2025-10-20 23:23:56.469 [http-nio-8090-exec-9] INFO  c.a.plagchenckpro.controller.PlagiarismController - 查重检测完成，查重率: 0.0%, 相似句子数: 0
+2025-10-20 23:24:06.350 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:24:06.352 [http-nio-8090-exec-10] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:24:06.352 [http-nio-8090-exec-10] INFO  c.a.plagchenckpro.controller.PlagiarismController - 收到查重检测请求，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:24:06.353 [http-nio-8090-exec-10] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 开始高效查重检测，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:24:06.353 [http-nio-8090-exec-10] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 大小: 1748095 bytes
+2025-10-20 23:24:06.408 [http-nio-8090-exec-10] WARN  org.apache.fontbox.ttf.TTFParser - Skip table '    ' which goes past the file size; offset: 1146308935, size: 7600, font size: 1792664
+2025-10-20 23:24:06.409 [http-nio-8090-exec-10] WARN  org.apache.pdfbox.pdmodel.font.PDCIDFontType2 - Could not read embedded OTF for font DCWGQU+CambriaMath
+java.io.IOException: 'head' table is mandatory
+	at org.apache.fontbox.ttf.TTFParser.parseTables(TTFParser.java:198)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:165)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:79)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:27)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:110)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:73)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:112)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:65)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createDescendantFont(PDFontFactory.java:139)
+	at org.apache.pdfbox.pdmodel.font.PDType0Font.<init>(PDType0Font.java:203)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createFont(PDFontFactory.java:97)
+	at org.apache.pdfbox.pdmodel.PDResources.getFont(PDResources.java:171)
+	at org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.process(SetFontAndSize.java:66)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:980)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:555)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:530)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.LegacyPDFStreamEngine.processPage(LegacyPDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.PDFTextStripper.processPage(PDFTextStripper.java:363)
+	at org.apache.tika.parser.pdf.PDF2XHTML.processPage(PDF2XHTML.java:137)
+	at org.apache.tika.parser.pdf.AbstractPDF2XHTML.processPages(AbstractPDF2XHTML.java:1369)
+	at org.apache.pdfbox.text.PDFTextStripper.writeText(PDFTextStripper.java:238)
+	at org.apache.tika.parser.pdf.PDF2XHTML.process(PDF2XHTML.java:108)
+	at org.apache.tika.parser.pdf.PDFParser.parse(PDFParser.java:219)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:203)
+	at org.apache.tika.Tika.parseToString(Tika.java:525)
+	at org.apache.tika.Tika.parseToString(Tika.java:495)
+	at org.apache.tika.Tika.parseToString(Tika.java:557)
+	at com.afeng.plagchenckpro.service.impl.DocumentParseServiceImpl.parseDocument(DocumentParseServiceImpl.java:64)
+	at com.afeng.plagchenckpro.service.impl.PlagiarismCheckServiceImpl.checkPlagiarism(PlagiarismCheckServiceImpl.java:80)
+	at com.afeng.plagchenckpro.controller.PlagiarismController.checkPlagiarism(PlagiarismController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-20 23:24:06.481 [http-nio-8090-exec-10] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 29861 字符
+2025-10-20 23:24:07.979 [http-nio-8090-exec-10] ERROR c.a.p.service.impl.PlagiarismCheckServiceImpl - 句子数量：353
+2025-10-20 23:24:07.979 [http-nio-8090-exec-10] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 前三个高重复论文ID: [1]
+2025-10-20 23:24:07.982 [http-nio-8090-exec-10] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 高效查重检测完成，查重率: 97.0, 相似句子数: 341,处理错误的句子:0
+2025-10-20 23:24:07.982 [http-nio-8090-exec-10] INFO  c.a.plagchenckpro.controller.PlagiarismController - 查重检测完成，查重率: 97.0%, 相似句子数: 341
+2025-10-20 23:40:32.860 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:40:32.928 [http-nio-8090-exec-6] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:40:32.943 [http-nio-8090-exec-6] INFO  c.a.plagchenckpro.controller.PlagiarismController - 收到查重检测请求，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:40:32.943 [http-nio-8090-exec-6] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 开始高效查重检测，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:40:32.945 [http-nio-8090-exec-6] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 大小: 1748095 bytes
+2025-10-20 23:40:33.279 [http-nio-8090-exec-6] WARN  org.apache.fontbox.ttf.TTFParser - Skip table '    ' which goes past the file size; offset: 1146308935, size: 7600, font size: 1792664
+2025-10-20 23:40:33.282 [http-nio-8090-exec-6] WARN  org.apache.pdfbox.pdmodel.font.PDCIDFontType2 - Could not read embedded OTF for font DCWGQU+CambriaMath
+java.io.IOException: 'head' table is mandatory
+	at org.apache.fontbox.ttf.TTFParser.parseTables(TTFParser.java:198)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:165)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:79)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:27)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:110)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:73)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:112)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:65)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createDescendantFont(PDFontFactory.java:139)
+	at org.apache.pdfbox.pdmodel.font.PDType0Font.<init>(PDType0Font.java:203)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createFont(PDFontFactory.java:97)
+	at org.apache.pdfbox.pdmodel.PDResources.getFont(PDResources.java:171)
+	at org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.process(SetFontAndSize.java:66)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:980)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:555)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:530)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.LegacyPDFStreamEngine.processPage(LegacyPDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.PDFTextStripper.processPage(PDFTextStripper.java:363)
+	at org.apache.tika.parser.pdf.PDF2XHTML.processPage(PDF2XHTML.java:137)
+	at org.apache.tika.parser.pdf.AbstractPDF2XHTML.processPages(AbstractPDF2XHTML.java:1369)
+	at org.apache.pdfbox.text.PDFTextStripper.writeText(PDFTextStripper.java:238)
+	at org.apache.tika.parser.pdf.PDF2XHTML.process(PDF2XHTML.java:108)
+	at org.apache.tika.parser.pdf.PDFParser.parse(PDFParser.java:219)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:203)
+	at org.apache.tika.Tika.parseToString(Tika.java:525)
+	at org.apache.tika.Tika.parseToString(Tika.java:495)
+	at org.apache.tika.Tika.parseToString(Tika.java:557)
+	at com.afeng.plagchenckpro.service.impl.DocumentParseServiceImpl.parseDocument(DocumentParseServiceImpl.java:64)
+	at com.afeng.plagchenckpro.service.impl.PlagiarismCheckServiceImpl.checkPlagiarism(PlagiarismCheckServiceImpl.java:80)
+	at com.afeng.plagchenckpro.controller.PlagiarismController.checkPlagiarism(PlagiarismController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-20 23:40:33.876 [http-nio-8090-exec-6] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 29861 字符
+2025-10-20 23:40:38.252 [http-nio-8090-exec-6] ERROR c.a.p.service.impl.PlagiarismCheckServiceImpl - 句子数量：353
+2025-10-20 23:40:38.259 [http-nio-8090-exec-6] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 前三个高重复论文ID: [1]
+2025-10-20 23:40:38.276 [http-nio-8090-exec-6] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 高效查重检测完成，查重率: 97.0, 相似句子数: 341,处理错误的句子:0
+2025-10-20 23:40:38.276 [http-nio-8090-exec-6] INFO  c.a.plagchenckpro.controller.PlagiarismController - 查重检测完成，查重率: 97.0%, 相似句子数: 341
+2025-10-20 23:41:39.757 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:41:39.759 [http-nio-8090-exec-4] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:41:39.760 [http-nio-8090-exec-4] INFO  c.a.plagchenckpro.controller.PlagiarismController - 收到查重检测请求，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:41:39.761 [http-nio-8090-exec-4] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 开始高效查重检测，文件名: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 阈值: 0.7
+2025-10-20 23:41:39.761 [http-nio-8090-exec-4] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 开始解析文档: 20480050102_陈玺聿_基于机器学习的南京市居民消费趋势的分析和预测.pdf, 大小: 1748095 bytes
+2025-10-20 23:41:39.819 [http-nio-8090-exec-4] WARN  org.apache.fontbox.ttf.TTFParser - Skip table '    ' which goes past the file size; offset: 1146308935, size: 7600, font size: 1792664
+2025-10-20 23:41:39.819 [http-nio-8090-exec-4] WARN  org.apache.pdfbox.pdmodel.font.PDCIDFontType2 - Could not read embedded OTF for font DCWGQU+CambriaMath
+java.io.IOException: 'head' table is mandatory
+	at org.apache.fontbox.ttf.TTFParser.parseTables(TTFParser.java:198)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:165)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:79)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:27)
+	at org.apache.fontbox.ttf.TTFParser.parse(TTFParser.java:110)
+	at org.apache.fontbox.ttf.OTFParser.parse(OTFParser.java:73)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:112)
+	at org.apache.pdfbox.pdmodel.font.PDCIDFontType2.<init>(PDCIDFontType2.java:65)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createDescendantFont(PDFontFactory.java:139)
+	at org.apache.pdfbox.pdmodel.font.PDType0Font.<init>(PDType0Font.java:203)
+	at org.apache.pdfbox.pdmodel.font.PDFontFactory.createFont(PDFontFactory.java:97)
+	at org.apache.pdfbox.pdmodel.PDResources.getFont(PDResources.java:171)
+	at org.apache.pdfbox.contentstream.operator.text.SetFontAndSize.process(SetFontAndSize.java:66)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:980)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:555)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:530)
+	at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.LegacyPDFStreamEngine.processPage(LegacyPDFStreamEngine.java:155)
+	at org.apache.pdfbox.text.PDFTextStripper.processPage(PDFTextStripper.java:363)
+	at org.apache.tika.parser.pdf.PDF2XHTML.processPage(PDF2XHTML.java:137)
+	at org.apache.tika.parser.pdf.AbstractPDF2XHTML.processPages(AbstractPDF2XHTML.java:1369)
+	at org.apache.pdfbox.text.PDFTextStripper.writeText(PDFTextStripper.java:238)
+	at org.apache.tika.parser.pdf.PDF2XHTML.process(PDF2XHTML.java:108)
+	at org.apache.tika.parser.pdf.PDFParser.parse(PDFParser.java:219)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:298)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:203)
+	at org.apache.tika.Tika.parseToString(Tika.java:525)
+	at org.apache.tika.Tika.parseToString(Tika.java:495)
+	at org.apache.tika.Tika.parseToString(Tika.java:557)
+	at com.afeng.plagchenckpro.service.impl.DocumentParseServiceImpl.parseDocument(DocumentParseServiceImpl.java:64)
+	at com.afeng.plagchenckpro.service.impl.PlagiarismCheckServiceImpl.checkPlagiarism(PlagiarismCheckServiceImpl.java:80)
+	at com.afeng.plagchenckpro.controller.PlagiarismController.checkPlagiarism(PlagiarismController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2025-10-20 23:41:39.884 [http-nio-8090-exec-4] INFO  c.a.p.service.impl.DocumentParseServiceImpl - 文档解析成功，提取文本长度: 29861 字符
+2025-10-20 23:41:41.683 [http-nio-8090-exec-4] ERROR c.a.p.service.impl.PlagiarismCheckServiceImpl - 句子数量：353
+2025-10-20 23:41:41.683 [http-nio-8090-exec-4] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 前三个高重复论文ID: [1]
+2025-10-20 23:41:41.688 [http-nio-8090-exec-4] INFO  c.a.p.service.impl.PlagiarismCheckServiceImpl - 高效查重检测完成，查重率: 97.0, 相似句子数: 341,处理错误的句子:0
+2025-10-20 23:41:41.688 [http-nio-8090-exec-4] INFO  c.a.plagchenckpro.controller.PlagiarismController - 查重检测完成，查重率: 97.0%, 相似句子数: 341
+2025-10-20 23:41:45.103 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:41:45.141 [http-nio-8090-exec-5] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:41:45.142 [http-nio-8090-exec-5] INFO  c.afeng.plagchenckpro.controller.PaperController - 下载文件，文件名：5e7044e59c624456be6aa713c4ee28b6.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20251020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251020T144748Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=91f8c47813d5b043eba6f381f0226a5ad0762815da522528ce0f2af39cf8ef23
+2025-10-20 23:42:16.425 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:42:16.426 [http-nio-8090-exec-7] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:42:16.431 [http-nio-8090-exec-7] INFO  c.afeng.plagchenckpro.controller.PaperController - 分页查询：,,10,1
+2025-10-20 23:42:18.228 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - jwt校验:eyJhbGciOiJIUzUxMiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAA_zWLQQqEMAwA_5KzhSbVlvqbGCt0YaGQCl0W_248eJthmD98eoUVPG-ehMglScHNhN5lRHYc8y6yUJEcYILKHVZM0eeEMeAEem526097-T5d1XSMw5jP3ZhbMy6jvd9Cz1et4XUD64uYHH4AAAA.5lJ5NO4MVepC_5rlKARl_jrW_RGgicfGdwfUWKvFciRVlLsWXZVy9LmnZsNKkFqj0MT13yEa46XenCKke5a_hw
+2025-10-20 23:42:18.229 [http-nio-8090-exec-9] INFO  c.a.p.interceptor.JwtTokenUserInterceptor - 当前用户id：1
+2025-10-20 23:42:18.232 [http-nio-8090-exec-9] INFO  c.a.plagchenckpro.controller.FeedbackController - 获取反馈
+2025-10-20 23:43:02.593 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-20 23:43:02.618 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
