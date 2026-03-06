@@ -1,46 +1,71 @@
 # plagChenckPro
 
-基于 `Spring Boot 3` 的中文论文查重后端系统，支持文档上传、文本解析、句级查重、批量异步处理、结果追踪与用户权限管理。
+基于 Spring Boot 3 的中文论文查重系统后端，支持论文上传、文本解析、句级查重、批量异步处理、结果追踪和用户权限管理。
 
-## 1. 项目简介
+## 项目简介
 
-`plagChenckPro` 面向高校课程设计/毕业论文场景，核心目标是实现“可落地、可扩展”的论文查重流程：
+`plagChenckPro` 面向高校课程论文/毕业论文场景，核心流程包括：
 
-- 上传论文并存储到 MinIO
-- 解析 PDF/Word/TXT 文档内容
-- 分句、分词、特征提取（MinHash/LSH/语义向量）
-- 相似候选筛选与精排
-- 输出查重率、相似句、疑似来源论文
-- 支持批量异步导入和任务状态追踪
+1. 文档上传与对象存储（MinIO）
+2. 文档解析（PDF/Word/TXT）
+3. 分句分词与文本特征提取（HanLP + MinHash + LSH）
+4. 相似句候选召回与精排（编辑距离 + 语义向量 + 关键词）
+5. 输出查重率、相似句详情、疑似来源论文
 
-## 2. 技术栈
+## 页面截图
 
-- 后端框架：Spring Boot 3.0.13
-- 持久层：MyBatis-Plus 3.5.8 + MySQL 8
-- 文件存储：MinIO
-- 文档解析：Apache Tika
-- 中文 NLP：HanLP
-- 语义向量：DeepLearning4J / ND4J（内置词向量模型）
-- 认证授权：JWT + Spring MVC Interceptor
-- 构建与部署：Maven + Docker
+> 截图文件位于 `img/` 目录，以下为项目页面展示。
 
-## 3. 核心功能
+### 1. 系统页面 01
+![系统页面01](./img/screenshot-01.png)
 
-- 用户模块：登录、注册、个人信息修改、管理员权限控制
-- 论文模块：单篇上传、分页查询、删除、下载
-- 查重模块：上传待检文档，返回重复率和相似句详情
-- 批量模块：多文件异步导入，任务进度与结果查询
-- 反馈模块：用户意见收集
+### 2. 系统页面 02
+![系统页面02](./img/screenshot-02.png)
 
-## 4. 查重流程（实现思路）
+### 3. 系统页面 03
+![系统页面03](./img/screenshot-03.png)
 
-1. 文档解析：通过 Apache Tika 提取文本。
-2. 文本预处理：清洗文本、分句、分词、停用词过滤。
-3. 候选召回：基于 MinHash + LSH 桶检索快速召回候选句。
-4. 相似度计算：结合编辑距离、语义向量余弦、关键词重合度进行综合评分。
-5. 结果生成：输出重复率、相似句列表、Top 来源论文信息与等级结论。
+### 4. 系统页面 04
+![系统页面04](./img/screenshot-04.png)
 
-## 5. 项目结构
+### 5. 系统页面 05
+![系统页面05](./img/screenshot-05.png)
+
+### 6. 系统页面 06
+![系统页面06](./img/screenshot-06.png)
+
+### 7. 系统页面 07
+![系统页面07](./img/screenshot-07.png)
+
+## 技术栈
+
+- Spring Boot 3.0.13
+- MyBatis-Plus 3.5.8
+- MySQL 8
+- MinIO
+- Apache Tika
+- HanLP
+- DeepLearning4J / ND4J
+- JWT
+- Maven + Docker
+
+## 核心功能
+
+- 用户模块：登录、注册、信息修改、管理员权限控制
+- 论文模块：上传、分页查询、删除、下载
+- 查重模块：单篇论文查重，返回重复率和相似句
+- 批量模块：多文件异步导入，任务进度/结果查询
+- 反馈模块：用户反馈收集
+
+## 查重流程
+
+1. 使用 Apache Tika 提取文档文本
+2. 文本清洗、分句、分词、停用词过滤
+3. 基于 MinHash + LSH 进行候选句召回
+4. 综合编辑距离、语义向量余弦、关键词重合度进行相似度评分
+5. 按阈值输出相似句和重复率结果
+
+## 项目结构
 
 ```text
 src/main/java/com/afeng/plagchenckpro
@@ -48,32 +73,30 @@ src/main/java/com/afeng/plagchenckpro
 ├── service         # 业务层
 ├── mapper          # 数据访问层
 ├── entity          # DTO/VO/POJO
-├── common          # 工具、统一返回、异常处理
-├── config          # Web、异步、CORS、MinIO 配置
+├── common          # 工具类、统一返回、异常处理
+├── config          # Web/异步/CORS/MinIO 配置
 ├── interceptor     # JWT 拦截器
-└── algorithm       # MinHash / LSH 核心算法
+└── algorithm       # MinHash / LSH 算法
 ```
 
-## 6. 本地启动
+## 本地启动
 
-### 6.1 环境要求
+### 环境要求
 
 - JDK 17
 - Maven 3.8+
 - MySQL 8.x
 - MinIO
 
-### 6.2 配置说明
+### 配置
 
 编辑 `src/main/resources/application.properties`：
 
-- `spring.datasource.*`：数据库连接
+- `spring.datasource.*`：数据库配置
 - `minio.*`：对象存储配置
-- `server.port`：默认 `8090`
+- `server.port`：服务端口（默认 8090）
 
-建议将敏感信息（数据库密码、MinIO 密钥）改为环境变量读取。
-
-### 6.3 启动命令
+### 启动命令
 
 ```bash
 mvn clean spring-boot:run
@@ -86,34 +109,34 @@ mvn clean package
 java -jar target/plagChenckPro-0.0.1-SNAPSHOT.jar
 ```
 
-## 7. 主要接口（示例）
+## 主要接口
 
-- 用户登录：`POST /api/user/login`
-- 用户注册：`POST /api/user/register`
-- 单篇查重：`POST /api/plagiarism/check`
-- 论文上传：`POST /api/papers/upload`
-- 论文列表：`GET /api/papers/list`
-- 批量上传：`POST /api/batch/upload`
-- 批量进度：`GET /api/batch/status/{taskId}`
-- 批量结果：`GET /api/batch/result/{taskId}`
+- `POST /api/user/login`
+- `POST /api/user/register`
+- `POST /api/plagiarism/check`
+- `POST /api/papers/upload`
+- `GET /api/papers/list`
+- `POST /api/batch/upload`
+- `GET /api/batch/status/{taskId}`
+- `GET /api/batch/result/{taskId}`
 
 > 除登录/注册外，大部分接口需在请求头携带 `token`。
 
-## 8. 当前亮点
+## 优势与改进
 
-- 面向中文文本的句级查重实现
-- LSH 预筛 + 综合相似度精排，兼顾性能与效果
-- 支持批量异步处理和任务状态追踪
-- 服务分层明确，便于二次开发
+### 当前优势
 
-## 9. 后续优化方向
+- 句级查重链路完整，兼顾性能和效果
+- 支持批量异步处理与任务追踪
+- 模块分层清晰，便于维护与扩展
 
-- 安全：密码哈希从 MD5 升级到 BCrypt，配置外置化
-- 工程：补齐单元测试/集成测试与 OpenAPI 文档
-- 稳定性：完善线程池隔离、重试机制、幂等控制
-- 算法：建立标注数据集，按 Precision/Recall/F1 持续优化
+### 后续改进
 
-## 10. 声明
+- 安全性：密码哈希升级为 BCrypt，敏感配置外置化
+- 工程化：补齐单元测试/集成测试与 OpenAPI 文档
+- 稳定性：完善线程池隔离、重试机制和幂等控制
+- 算法评估：构建标注数据集并按 Precision/Recall/F1 持续优化
+
+## 声明
 
 本项目用于学习与工程实践展示，不替代学校或机构的正式学术查重系统。
-
